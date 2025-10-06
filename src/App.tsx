@@ -13,7 +13,7 @@ function App() {
   ];
 
   const handleClick = () => {
-    const messageText = isFirstMessage ? 'teju says i am sorry to DD' : 'Sorry cheppaga';
+    const messageText = isFirstMessage ? 'teju says sorry to DD' : 'Sorry cheppaga';
     const newMessages = Array.from({ length: 50 }, (_, i) => ({
       text: messageText,
       color: colors[i % colors.length]
