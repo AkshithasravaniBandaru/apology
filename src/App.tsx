@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 function App() {
+  const [isFirstMessage, setIsFirstMessage] = useState(true);
   const [messages, setMessages] = useState<Array<{ text: string; color: string }>>([]);
 
   const colors = [
@@ -11,18 +12,20 @@ function App() {
     'text-sky-500', 'text-slate-500', 'text-zinc-500', 'text-neutral-500'
   ];
 
-  const handleDoubleClick = () => {
+  const handleClick = () => {
+    const messageText = isFirstMessage ? 'teju says i am sorry' : 'Sorry cheppaga';
     const newMessages = Array.from({ length: 50 }, (_, i) => ({
-      text: i % 2 === 0 ? 'Sorry cheppaga' : 'teju says i am sorry',
+      text: messageText,
       color: colors[i % colors.length]
     }));
     setMessages(newMessages);
+    setIsFirstMessage(!isFirstMessage);
   };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 flex flex-col items-center justify-center p-8">
       <button
-        onDoubleClick={handleDoubleClick}
+        onClick={handleClick}
         className="mb-8 px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg shadow-lg transition-all transform hover:scale-105 active:scale-95 text-xl"
       >
         teju
@@ -43,6 +46,3 @@ function App() {
 }
 
 export default App;
-
-
-export default App
