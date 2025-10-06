@@ -28,7 +28,7 @@ function App() {
         onClick={handleClick}
         className="mb-8 px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg shadow-lg transition-all transform hover:scale-105 active:scale-95 text-xl"
       >
-        teju
+        Click Here
       </button>
 
       <div className="max-w-4xl w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
